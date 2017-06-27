@@ -6,20 +6,6 @@
     // if results.json file is blank, the app will not run ('unexpected end of JSON input')
     // Why aren't HTTP and HTTPS modules used in this?
 
-// Callback attempts:
-  //The error is somewhere here.
-  // for(var i=0; i<parsedData.length; i++){
-  //
-  //     shirtData.shirts[i].time  = 'time'; // = shirts[i].time;
-  //     //shirtData[i].time = 'time';
-  //     console.log("This is the time: " + time);
-  // }
-
-  // for (let i = 0, l = parsedData.length; i < l; i++) {
-  //     let obj = parsedData[i].time = "hello time";
-  //     console.log("This is the time: " + time);
-  //
-  // }
 
 
 // Re. Checking if data directory exists:
@@ -28,14 +14,9 @@
 
   //////////////////////////////////////////////////////////////////////////
 
-// (5) Scraping and Saving Data:
-    // The scraper should get the price, title, url and image url from the product page and save this information into a CSV file.
-    //    DONE  The information should be stored in an CSV file that is named for the date it was created, e.g. 2016-11-21.csv.
-    //   DONE  Assume that the the column headers in the CSV need to be in a certain order to be correctly entered into a database. They should be in this order: Title, Price, ImageURL, URL, and Time
-    // DONE The CSV file should be saved inside the ‘data’ folder.
 
-// (6) If your program is run twice, it should overwrite the data in the CSV file with the updated information.
- // Now, if this is done another day the data file WILL NOT automatically be overwritten...!
+
+
 
 // (7) If http://shirts4mike.com is down, an error message describing the issue should appear in the console.
     //The error should be human-friendly, such as “There’s been a 404 error. Cannot connect to http://shirts4mike.com.”
@@ -63,6 +44,15 @@
     // Has been updated in the last six months
 
 // (4) Program your scraper so that it visits the website http://shirts4mike.com and uses http://shirts4mike.com/shirts.php as single entry point to scrape information for 8 tee-shirts from the site, without using any hard-coded urls like http://www.shirts4mike.com/shirt.php?id=101. If you’re unsure of how to get started, try googling ‘node scraper’ to get a feel for what a scraper is and what it does.
+
+// (5) Scraping and Saving Data:
+    // DONE The scraper should get the price, title, url and image url from the product page and save this information into a CSV file.
+    //    DONE  The information should be stored in an CSV file that is named for the date it was created, e.g. 2016-11-21.csv.
+    //   DONE  Assume that the the column headers in the CSV need to be in a certain order to be correctly entered into a database. They should be in this order: Title, Price, ImageURL, URL, and Time
+    // DONE The CSV file should be saved inside the ‘data’ folder.
+
+// (6) If your program is run twice, it should overwrite the data in the CSV file with the updated information.
+ // Now, if this is done another day the data file WILL NOT automatically be overwritten...!
 
 ///////// Extra Credit DONE
     // Edit your package.json file so that your program runs when the npm start command is run.
