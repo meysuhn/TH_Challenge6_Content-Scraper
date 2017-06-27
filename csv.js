@@ -9,20 +9,10 @@ const moment = require('moment'); // module for getting date and time
 var date = moment().format('YYYY-MM-DD');
 var fileName = `data/${date}.csv`; // Template literal to create file name with current date.
 
-
-function makeCSV (obj) {
+function makeCSV (obj) { // takes in returned object from xrayScraper function
   let shirtData = obj.shirts;
   let result = json2csv({ data: shirtData, fields: fields, fieldNames: fieldNames }); // run JSON2CSV
-  //console.log(obj); // This is working. The object is getting to this point.
   var shirtsObj = obj;
-try { // Not sure if this is still necessary?
-  //console.log(result);
-} catch (err) {
-// Errors are thrown for bad options, or if the data is empty and no fields are provided.
-// Be sure to provide fields if it is possible that your data array will be empty.
-console.error(err);
-}
-  console.log("makeCSV has run");
   fs.writeFile(fileName, result, function(err) { //save file to data dir
     console.log('file saved');
     if (err) throw err;
