@@ -56,14 +56,3 @@ function xrayScraper() {
 } // end of xrayScraper function
 
 module.exports.xrayScraper = xrayScraper; // makes the xrayScraper function available globally
-
-// Pre-Submission Question
-  // What is going on with moment.js
-
-  // Error messages.
-  // I've put a try/catch block around the scraper request to catch an error when when shirts4mike is down.
-  // When I test with the wifi turned off a stack trace is returned, but I can't access any specific error code on the err object.
-   // I've followed Andrew's 'Handling the Error Event in Node' vids and _think_ I've set it up the same way...The only difference I can see
-    // is that I'm not using an http module therefore maybe the error object doesn't come back the same?
-   // Is it OK to simply write in a message for when an unspecified error occurs to fulfill this challenge's requirement? (as one line 51)
-   // or if there is something I've not done quite right any tips greatly appreciated!
