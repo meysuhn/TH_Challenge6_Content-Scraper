@@ -8,12 +8,48 @@ const fs = require('fs');
 const csv = require ('./csv.js');
 const dir = './data'; // Set up data directory
 const moment = require('moment'); // date & time module
+const momentTZ = require('moment-timezone'); // timezone module
+
+
+// NOTE Why is errors function easily available to csv file, but I have to export the xrayScraper one?
+
+
+// Moment Data
+let time = moment().format('H:mm:ss'); // display time in 24 hour format.
+let day = moment().format('ddd');
+let date = moment().format('MMM DD YYYY');
+let guess = moment.tz.guess(); // get user's zone
+let timezone = moment.tz(guess).format('z Z'); // Get zone info for user's zone
+let timezoneAbbr = moment.tz().zoneAbbr();  // Zone name abbreviation
+
+
+function errors(err){ // err object passed in from whichever function has failed
+  var errorLog = '';
+  if (err.code == 'ENOTFOUND') {
+    errorLog = "["+`${day}`+ " " + `${date}` + " " + `${time}`+ " " + `${timezone}`+ " " + "("+`${timezoneAbbr}`+")" + "]" + " " + "There’s been a 404 error. Cannot connect to http://shirts4mike.com.";
+  } else {
+    errorLog = "["+`${day}`+ " " + `${date}` + " " + `${time}`+ " " + `${timezone}`+ " " + "("+`${timezoneAbbr}`+")" + "]" + " " + err.message;
+  }
+
+  fs.appendFile('scraper-error.log', '\r\n' + errorLog, function (err) {  // '\r\n' ensures the message is added to a new line in log file
+    if (err) {
+      // append failed
+    } else {
+      // done
+    }
+  });
+}
+
+
+
+
 
 // CHECK IF DATA DIRECTORY EXISTS
 (function() {
   fs.open(dir, 'r', (err, fd) => { // try to open /data folder
     if (err) { // Check for ENOENT error (meaning folder doesn't exist)
       if (err.code === 'ENOENT') { // If directory doesn't exist then create one
+      errors(err); // run the errors function
         fs.mkdir(dir); // create the missing directory
       }
     }
@@ -35,11 +71,9 @@ function xrayScraper() {
       }])
     })(function(err, obj) { // Callback function to add in time key and value to object.
       if(err) {
-      console.log("There’s been a 404 error. Cannot connect to http://shirts4mike.com.");
+        errors(err); // run the errors function
     }
     else {
-      let time = moment().format('H:mm:ss'); // display time in 24 hour format.
-      console.log("The time is: " + time);
       for(var i=0; i<obj.shirts.length; i++){
           obj.shirts[i].time  = time;
          }

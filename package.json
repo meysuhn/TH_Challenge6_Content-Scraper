@@ -7,6 +7,7 @@
     "exceljs": "^0.4.12",
     "json2csv": "^3.7.3",
     "moment": "^2.18.1",
+    "moment-timezone": "^0.5.13",
     "x-ray": "^2.3.2"
   },
   "devDependencies": {},
@@ -14,6 +15,6 @@
     "start": "node scraper.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Chris M",
+  "author": "Chris Mason",
   "license": "MIT"
   }

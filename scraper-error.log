@@ -1,0 +1,15 @@
+
+[Thu Jun 29 2017 12:55:31 on4(UTC)]
+[Thu Jun 29 2017 12:55:38 on4(UTC)]
+[Thu Jun 29 2017 13:27:06 on4(UTC)]getaddrinfo ENOTFOUND shirts4mike.com shirts4mike.com:80
+[Thu Jun 29 2017 13:54:57 on4(UTC)]ENOENT: no such file or directory, open './data'
+[Thu Jun 29 2017 13:56:02 on4(UTC)]resul is not defined
+[Thu Jun 29 2017 13:59:28(UTC)]getaddrinfo ENOTFOUND shirts4mike.com shirts4mike.com:80
+[Thu Jun 29 2017 14:09:01(UTC)] getaddrinfo ENOTFOUND shirts4mike.com shirts4mike.com:80
+[Thu Jun 29 2017 14:10:19UTC +00:00(UTC)] getaddrinfo ENOTFOUND shirts4mike.com shirts4mike.com:80
+[Thu Jun 29 2017 14:11:12 UTC +00:00 (UTC)] getaddrinfo ENOTFOUND shirts4mike.com shirts4mike.com:80
+[Thu Jun 29 2017 14:11:54 BST +01:00 (UTC)] getaddrinfo ENOTFOUND shirts4mike.com shirts4mike.com:80
+[Thu Jun 29 2017 14:14:29 BST +01:00 (UTC)] getaddrinfo ENOTFOUND shirts4mike.com shirts4mike.com:80
+[Thu Jun 29 2017 14:14:58 BST +01:00 (UTC)] ENOTFOUND
+[Thu Jun 29 2017 14:19:21 BST +01:00 (UTC)] There’s been a 404 error. Cannot connect to http://shirts4mike.com.
+[Thu Jun 29 2017 14:19:49 BST +01:00 (UTC)] resul is not defined

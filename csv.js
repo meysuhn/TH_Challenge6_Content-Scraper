@@ -14,8 +14,9 @@ function makeCSV (obj) { // takes in returned object from xrayScraper function
   let result = json2csv({ data: shirtData, fields: fields, fieldNames: fieldNames }); // run JSON2CSV
   var shirtsObj = obj;
   fs.writeFile(fileName, result, function(err) { //save file to data dir
-    console.log('file saved');
-    if (err) throw err;
+    if (err) {
+      errors(err); // run the errors function
+    }
   });
 
 }
