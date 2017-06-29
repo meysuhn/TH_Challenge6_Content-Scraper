@@ -21,4 +21,4 @@ function makeCSV (obj) { // takes in returned object from xrayScraper function
 
 }
 
-module.exports.makeCSV = makeCSV; // makes the makeCSV function available globally
+module.exports.makeCSV2 = makeCSV; // makes the makeCSV function available globally by calling makeCSV2 from any other module with "require ('./csv.js');"
