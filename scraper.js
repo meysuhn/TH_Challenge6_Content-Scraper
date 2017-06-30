@@ -19,15 +19,14 @@ let guess = moment.tz.guess(); // get user's zone
 let timezone = moment.tz(guess).format('z Z'); // Get zone info for user's zone
 let timezoneAbbr = moment.tz().zoneAbbr();  // Zone name abbreviation
 
-
+// Errors Function
 function errors(err){ // err object passed in from whichever function has failed
   var errorLog = '';
-  if (err.code == 'ENOTFOUND') {
+  if (err.code == 'ENOTFOUND') { // if website is down...
     errorLog = "["+`${day}`+ " " + `${date}` + " " + `${time}`+ " " + `${timezone}`+ " " + "("+`${timezoneAbbr}`+")" + "]" + " " + "There’s been a 404 error. Cannot connect to http://shirts4mike.com.";
-  } else {
+  } else { // all other errors
     errorLog = "["+`${day}`+ " " + `${date}` + " " + `${time}`+ " " + `${timezone}`+ " " + "("+`${timezoneAbbr}`+")" + "]" + " " + err.message;
   }
-
   fs.appendFile('scraper-error.log', '\r\n' + errorLog, function (err) {  // '\r\n' ensures the message is added to a new line in log file
     if (err) {
       // append failed
@@ -36,10 +35,6 @@ function errors(err){ // err object passed in from whichever function has failed
     }
   });
 }
-
-
-
-
 
 // CHECK IF DATA DIRECTORY EXISTS
 (function() {
