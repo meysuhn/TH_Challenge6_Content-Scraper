@@ -4,7 +4,7 @@
   "description": "A web scraper for TH Challenge 6",
   "main": "scraper.js",
   "dependencies": {
-    "exceljs": "^0.4.12",
+    "exceljs": "^4.1.1",
     "json2csv": "^3.7.3",
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
@@ -17,4 +17,4 @@
   },
   "author": "Chris Mason",
   "license": "MIT"
-  }
+}
